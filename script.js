@@ -1,0 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((btn, index) => {
+        setTimeout(() => {
+            btn.style.transition = 'all 0.5s ease';
+            btn.style.opacity = 1;
+            btn.style.transform = 'translateY(0)';
+        }, index * 150); // אפקט סדרתי קל
+    });
+});

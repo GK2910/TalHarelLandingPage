@@ -8,30 +8,34 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.transition = 'all 0.5s ease';
             btn.style.opacity = 1;
             btn.style.transform = 'translateY(0)';
-        }, index * 150); // delay קל בין הכפתורים
+        }, index * 150);
     });
 
     // =====================
-    // אנימציית שם (כתיבה) - כולל רווחים
+    // אנימציית שם (כתיבה) - רווחים נשמרים
     // =====================
     const heroTitle = document.querySelector('.hero h1');
     const text = heroTitle.textContent;
     heroTitle.textContent = ''; // רוקן את הטקסט
 
-    text.split('').forEach((char, i) => {
-        const span = document.createElement('span');
-        // שמירת רווחים בלי להדביק אותות
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        span.style.opacity = 0;
-        span.style.display = 'inline-block';
-        span.style.transform = 'translateX(20px)'; // מתחיל מימין
-        span.style.transition = 'all 0.3s ease';
-        heroTitle.appendChild(span);
+    let delay = 0;
+    for (let char of text) {
+        if (char === ' ') {
+            heroTitle.appendChild(document.createTextNode(' ')); // רווח רגיל
+        } else {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.opacity = 0;
+            span.style.display = 'inline-block';
+            span.style.transform = 'translateX(20px)';
+            span.style.transition = 'all 0.3s ease';
+            heroTitle.appendChild(span);
 
-        // אפקט סדרתי - כל אות מופיעה אחרי אחרת
-        setTimeout(() => {
-            span.style.opacity = 1;
-            span.style.transform = 'translateX(0)';
-        }, i * 150);
-    });
+            setTimeout(() => {
+                span.style.opacity = 1;
+                span.style.transform = 'translateX(0)';
+            }, delay);
+            delay += 150;
+        }
+    }
 });

@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // =====================
-    // אנימציית שם (כתיבה) - רווחים נשמרים
+    // אנימציית שם (כתיבה) - כולל רווחים ועברית RTL
     // =====================
     const heroTitle = document.querySelector('.hero h1');
-    const text = heroTitle.textContent;
-    heroTitle.textContent = ''; // רוקן את הטקסט
+    const text = heroTitle.textContent.trim(); // רוקן את הטקסט
+    heroTitle.textContent = '';
 
     let delay = 0;
     for (let char of text) {
@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             span.style.display = 'inline-block';
             span.style.transform = 'translateX(20px)';
             span.style.transition = 'all 0.3s ease';
+            // ✅ כיוון עברית נכון לכל אות
+            span.style.direction = 'rtl';
+            span.style.unicodeBidi = 'bidi-override';
             heroTitle.appendChild(span);
 
             setTimeout(() => {

@@ -1,18 +1,1 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const title = document.querySelector('.hero-title');
-    const text = title.textContent;
-
-    title.textContent = '';
-
-    [...text].forEach((char, index) => {
-        const span = document.createElement('span');
-        span.textContent = char === ' ' ? '\u00A0' : char;
-        title.appendChild(span);
-
-        setTimeout(() => {
-            span.style.transition = 'all 0.4s ease';
-            span.style.opacity = 1;
-            span.style.transform = 'translateY(0)';
-        }, index * 120);
-    });
-});
+document.addEventListener('DOMContentLoaded', () => { const buttons = document.querySelectorAll('.btn'); buttons.forEach((btn, index) => { setTimeout(() => { btn.style.transition = 'all 0.5s ease'; btn.style.opacity = 1; btn.style.transform = 'translateY(0)'; }, index * 150); // אפקט סדרתי קל }); });

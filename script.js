@@ -1,39 +1,6 @@
-<!DOCTYPE html>
-<html lang="he">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>טל הראל</title>
-
-    <!-- פונטים -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<section class="hero">
-    <h1>טל הראל</h1>
-    <p class="tagline">אני כאן כדי להפוך את הדרך שלך לנדל״ן לפשוטה יותר</p>
-</section>
-
-<div class="container animate-up">
-    <h2 class="question">?מה החלום שלך היום</h2>
-
-    <div class="buttons">
-        <a href="https://wa.me/+972526607082?text=היי%2C%20אני%20מעוניין/ת%20לקנות%20דירה" class="btn">לקנות דירה</a>
-        <a href="https://wa.me/0526790905?text=היי%2C%20אני%20רוצה%20למכור%20דירה" class="btn">למכור דירה</a>
-        <a href="https://wa.me/0526790905?text=היי%2C%20אני%20מעוניין/ת%20להשקיע%20בנדל״ן" class="btn">להשקיע</a>
-    </div>
-</div>
-
-<footer>
-    <p>© 2026 Tal Harel</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+document.addEventListener('DOMContentLoaded', () => {
+    const card = document.querySelector('.animate-up');
+    setTimeout(() => {
+        card.classList.add('show');
+    }, 200);
+});

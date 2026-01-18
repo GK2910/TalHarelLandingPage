@@ -136,3 +136,21 @@ footer {
     transition: all 0.5s ease;
 }
 
+.hero {
+    margin-top: 80px; /* מזיז את כל האזור למטה */
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 64px;
+    overflow: hidden;
+}
+
+.hero-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+
+

@@ -125,3 +125,14 @@ footer {
         padding: 12px 0;
     }
 }
+
+/* אנימציה חלקה לכל אות בשם */
+.hero h1 span {
+    transition: all 0.3s ease;
+}
+
+/* אנימציה חלקה לכפתורים */
+.btn {
+    transition: all 0.5s ease;
+}
+
